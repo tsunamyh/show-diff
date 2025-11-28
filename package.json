@@ -12,5 +12,9 @@
   "packageManager": "pnpm@10.8.0",
   "devDependencies": {
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@types/node": "^24.10.1",
+    "axios": "^1.13.2"
   }
 }
