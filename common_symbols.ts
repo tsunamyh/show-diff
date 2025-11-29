@@ -1,4 +1,13 @@
-{
+interface Coin {
+  count: number;
+  timestamp: string;
+  symbols: {
+    binance_symbol: string[];
+    wallex_symbol: [string, string][];
+  };
+}
+
+const symbols: Coin ={
   "count": 203,
   "timestamp": "2025-11-28T17:43:35.939Z",
   "symbols": {
@@ -1023,3 +1032,5 @@
     ]
   }
 }
+
+export default symbols;
