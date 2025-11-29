@@ -9,7 +9,7 @@ interface Coin {
 
 const  binance_wallex_common_symbols: Coin = {
   "count": 203,
-  "timestamp": "2025-11-29T15:38:13.304Z",
+  "timestamp": "2025-11-29T16:03:22.898Z",
   "symbols": {
     "binance_symbol": [
       "BTCUSDT",
