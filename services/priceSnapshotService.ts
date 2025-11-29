@@ -50,12 +50,8 @@ class PriceSnapshotService {
       prices: prices
     };
 
-    this.snapshots.push(snapshot);
-
-    // Keep only last 100 snapshots in memory
-    if (this.snapshots.length > 100) {
-      this.snapshots.shift();
-    }
+    // Keep only the latest snapshot (replace previous one)
+    this.snapshots = [snapshot];
 
     // Log the snapshot
     console.log(`📊 Snapshot at ${snapshot.timestamp} - ${Object.keys(prices).length} symbols`);
@@ -76,15 +72,17 @@ class PriceSnapshotService {
   }
 
   /**
-   * Get price history for a specific symbol
+   * Get price history for a specific symbol (only latest snapshot)
    */
-  public getSymbolHistory(symbol: string): Array<{ timestamp: string; price: { ask: [string, string]; bid: [string, string] } }> {
-    return this.snapshots
-      .filter(snapshot => snapshot.prices[symbol])
-      .map(snapshot => ({
-        timestamp: snapshot.timestamp,
-        price: snapshot.prices[symbol]
-      }));
+  public getSymbolPrice(symbol: string): { timestamp: string; price: { ask: [string, string]; bid: [string, string] } } | null {
+    const latest = this.getLatestSnapshot();
+    if (!latest || !latest.prices[symbol]) {
+      return null;
+    }
+    return {
+      timestamp: latest.timestamp,
+      price: latest.prices[symbol]
+    };
   }
 
   /**
