@@ -5,11 +5,11 @@ interface Coin {
     binance_symbol: string[];
     wallex_symbol: [string, string][];
   };
-}
+} 
 
-const binance_wallex_common_symbols: Coin = {
+const  binance_wallex_common_symbols: Coin = {
   "count": 203,
-  "timestamp": "2025-11-29T15:29:44.730Z",
+  "timestamp": "2025-11-29T15:38:13.304Z",
   "symbols": {
     "binance_symbol": [
       "BTCUSDT",
@@ -1031,6 +1031,6 @@ const binance_wallex_common_symbols: Coin = {
       ]
     ]
   }
-}
+} 
 
 export default binance_wallex_common_symbols;

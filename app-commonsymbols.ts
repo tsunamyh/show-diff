@@ -113,12 +113,12 @@ async function getCommonSymbolss(): Promise<void> {
 
     // const result = "interface Coin {\ncount: number;\ntimestamp: string;\nsymbols: {\nbinance_symbol: string[];\nwallex_symbol: [string, string][];\n};\n} \n\n"+ "const  binance_wallex_common_symbols: Coin =" + JSON.stringify(resultObj, null, 2) + "\n\nexport default binance_wallex_common_symbols;";
     const result = `interface Coin {
-count: number;
-timestamp: string;
-symbols: {
-binance_symbol: string[];
-wallex_symbol: [string, string][];
-};
+  count: number;
+  timestamp: string;
+  symbols: {
+    binance_symbol: string[];
+    wallex_symbol: [string, string][];
+  };
 } \n\nconst  binance_wallex_common_symbols: Coin = ${JSON.stringify(
       resultObj,
       null,
