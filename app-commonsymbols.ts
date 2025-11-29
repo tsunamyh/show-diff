@@ -1,5 +1,5 @@
-const axios = require('axios');
-const fs = require('fs');
+import axios from 'axios';
+import fs from 'fs';
 
 interface BinanceSymbol {
   symbol: string;
@@ -16,7 +16,7 @@ interface WallexResponse {
   };
 }
 
-async function getCommonSymbols(): Promise<void> {
+async function getCommonSymbolss(): Promise<void> {
   try {
     console.log('در حال دریافت داده‌ها از Binance...');
     const binanceResponse = await axios.get(
@@ -115,4 +115,4 @@ async function getCommonSymbols(): Promise<void> {
   }
 }
 
-getCommonSymbols();
+getCommonSymbolss();
